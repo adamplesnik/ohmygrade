@@ -2,10 +2,10 @@ import Logo from './components/Logo'
 
 function App() {
   return (
-    <div className="bg-product-foreground text-neutral-foreground flex h-screen w-screen flex-col items-center justify-center gap-12 p-4 font-mono md:p-8">
+    <div className="bg-product-foreground text-product-on-foreground flex h-screen w-screen flex-col items-center justify-center gap-12 p-4 font-mono md:p-8">
       <Logo large colorful={false} />
       <div className="w-full text-center">Crazy simple climbing grade comparator.</div>
-      <div className="bg-neutral-foreground text-neutral-on-foreground w-fit -rotate-6 p-2 text-center">
+      <div className="bg-product-on-foreground text-neutral-on-foreground-contrast w-fit -rotate-6 p-2 text-center">
         Beta coming soon.
       </div>
     </div>

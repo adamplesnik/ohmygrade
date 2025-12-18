@@ -10,7 +10,7 @@ function Logo({ large = false, colorful = true }: LogoProps) {
   return (
     <div className={clsx(large ? 'text-7xl' : 'text-3xl', 'leading-[80%] font-medium')}>
       <div>
-        ohmy<span className={clsx(colorful ? 'text-product-foreground' : 'text-neutral-on-foreground')}>*</span>
+        ohmy<span className={clsx(colorful ? 'text-product-foreground' : 'text-neutral-foreground-dim')}>*</span>
       </div>
       grade
     </div>
