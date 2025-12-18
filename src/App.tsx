@@ -1,5 +1,5 @@
 function App() {
-  return <>Silence is golden.</>;
+  return <>Silence is golden.</>
 }
 
-export default App;
+export default App
