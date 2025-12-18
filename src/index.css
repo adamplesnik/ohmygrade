@@ -4,9 +4,41 @@
 @theme {
   --font-mono: 'DM Mono', serif;
 
+  --color-neutral-background: #fafaf9;
+  --color-neutral-background-alt: #f5f5f5;
+  --color-neutral-container: #dfe0e2;
+  --color-neutral-outline: #c9cccf;
   --color-neutral-foreground: #20201d;
   --color-neutral-on-foreground: #fafafa;
-
-  --color-product-foreground-dim: #eec553;
+  --color-neutral-foreground-dim: #555b5e;
   --color-product-foreground: #f6bb18;
+  --color-neutral-on-foreground: #fafafa;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-neutral-background: #222525;
+    --color-neutral-background-alt: #1d1f20;
+    --color-neutral-container: #292c2e;
+    --color-neutral-outline: #4e5356;
+    --color-neutral-foreground-dim: #949b9e;
+    --color-neutral-foreground: #eaebec;
+    --color-neutral-on-foreground: #1d1e20;
+  }
+}
+
+:root {
+  /* COLORS */
+  --error-background-light: #ffd6d6;
+  --error-background-dark: #5c0000;
+  --error-foreground-light: #cc0000;
+  --error-foreground-dark: #ff3333;
+  --info-background-light: #e5fbff;
+  --info-background-dark: #00262e;
+  --info-foreground-light: #007f99;
+  --info-foreground-dark: #0095b3;
+  --success-background-light: #e2fddd;
+  --success-background-dark: #062900;
+  --success-foreground-light: #158f00;
+  --success-foreground-dark: #19a400;
 }
