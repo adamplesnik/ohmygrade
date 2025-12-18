@@ -8,9 +8,9 @@ type LogoProps = {
 
 function Logo({ large = false, colorful = true }: LogoProps) {
   return (
-    <div className={clsx(large ? 'text-7xl' : 'text-3xl', 'leading-[80%] font-medium')}>
+    <div className={clsx(large ? 'text-7xl' : 'text-2xl', 'leading-[86%] font-medium tracking-tight')}>
       <div>
-        ohmy<span className={clsx(colorful ? 'text-product-foreground' : 'text-neutral-foreground-dim')}>*</span>
+        oh<span className={clsx(colorful ? 'text-product-foreground' : 'text-neutral-foreground-dim')}>^</span>my
       </div>
       grade
     </div>
