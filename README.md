@@ -4,7 +4,7 @@
 
 ## About
 
-**ohmygrade** is a web app for comparing climbing grades across systems. It is meant to be fast and actually useful for climbers.
+**ohmygrade** — a web app for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.
 
 ## Tech stack
 
