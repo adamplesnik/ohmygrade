@@ -1,14 +1,13 @@
 # ohmygrade
 
-**Crazy simple climbing grade comparator.**  
-ohmygrade.app
+[ohmygrade.app](https://ohmygrade.app)
 
 ## About
 
-**ohmygrade** is a tiny web app that makes comparing climbing grades across systems _ridiculously simple_.
+**ohmygrade** is a web app for comparing climbing grades across systems. It is meant to be fast and actually useful for climbers.
 
-## Features
+## Tech stack
 
-- Compare climbing grades across systems (YDS, French, UIAA, Font, V-scale)
-- Built with **React + TypeScript + Vite + Tailwind CSS**
-- Meant to be actually useful for climbers
+- Vite
+- React + TS
+- Tailwind CSS
