@@ -5,10 +5,6 @@
   --font-mono: 'DM Mono', monospace;
   --font-sans: 'DM Sans', sans-serif;
 
-  --color-error-foreground: light-dark(#cc0000, #ff3333);
-
-  --color-info-container: light-dark(#66e5ff, #004857);
-
   --color-neutral-background: light-dark(#fafaf9, #222525);
   --color-neutral-background-alt: light-dark(#f5f5f5, #1d1f20);
   --color-neutral-container: light-dark(#dfe0e2, #292c2e);
@@ -20,7 +16,8 @@
 
   --color-product-foreground: #f6bb18;
   --color-product-on-foreground: #20201d;
-
+  --color-error-foreground: light-dark(#cc0000, #ff3333);
+  --color-info-container: light-dark(#66e5ff, #004857);
   --color-success-foreground: light-dark(#158f00, #19a400);
 }
 

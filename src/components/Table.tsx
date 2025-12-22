@@ -15,25 +15,21 @@ export default function Table() {
     return a.start <= b.end && b.start <= a.end
   }
 
-  function getRangeLength({ start, end }: GradeRangeType) {
-    return (end - start) * ratio
+  function getOverlap(a: GradeRangeType, b: GradeRangeType): number {
+    return Math.max(0, Math.min(a.end, b.end) - Math.max(a.start, b.start))
   }
 
-  function getRangeCenter({ start, end }: GradeRangeType) {
-    return (start + (end - start) / 2) * ratio
+  function getOverlapRatio(a: GradeRangeType, b: GradeRangeType): number {
+    const overlap = getOverlap(a, b)
+    const aLength = a.end - a.start
+    return Math.round((overlap / aLength) * 100) / 100
   }
 
   return (
     <div className="relative flex w-full justify-center">
-      {hoveredGrade && (
-        <div
-          className="border-neutral-foreground-dim/50 pointer-events-none absolute -z-20 w-full -translate-y-1/2 border border-x-0 border-dashed"
-          style={{ top: getRangeCenter(hoveredGrade) + 56, height: getRangeLength(hoveredGrade) }}
-        ></div>
-      )}
       {gradeSystemsMeta.map((system) => (
         <div key={system.system} className="group relative w-50">
-          <div className="bg-neutral-background/70 group-hover:bg-neutral-container border-neutral-foreground sticky top-24 z-100 border-b px-4 py-2">
+          <div className="bg-neutral-background/70 group-hover:bg-info-container/40 border-neutral-foreground sticky top-24 z-100 border-b px-4 py-2">
             <h3 className="font-semibold">{system.name}</h3>
             <div className="text-neutral-foreground-dim -mt-0.5 text-xs">{system.type}</div>
           </div>
@@ -55,15 +51,17 @@ export default function Table() {
                     onMouseLeave={() => setHoveredGrade(null)}
                     onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
                     className={clsx(
-                      'hover:bg-info-container border-neutral-background flex h-full cursor-pointer items-center rounded-2xl border-2 px-4',
-                      isHovered ? 'bg-neutral-foreground-dim/20' : 'bg-neutral-container',
-                      isClicked && 'bg-product-foreground/30'
+                      'hover:bg-info-container group-hover:bg-info-container/20 group-[inner] border-neutral-background flex h-full cursor-pointer items-center overflow-hidden rounded-2xl border-2 px-4',
+                      isHovered ? 'bg-info-container/70' : 'bg-neutral-container/50',
+                      isClicked && 'bg-red-400'
                     )}
                   >
-                    {grade.value}{' '}
-                    <small className="flex-1 text-right">
+                    <div className="z-10">{grade.value}</div>
+                    <div className="bg-info-container group-[inner]:hover: absolute inset-0 z-0"></div>
+                    <small className="hidden flex-1 text-right">
                       {grade.start} - {grade.end}
                     </small>
+                    <small className="flex-1 text-right">{hoveredGrade && getOverlapRatio(hoveredGrade, grade)}</small>
                   </div>
                 </div>
               )
