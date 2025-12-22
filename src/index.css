@@ -6,6 +6,9 @@
   --font-sans: 'DM Sans', sans-serif;
 
   --color-error-foreground: light-dark(#cc0000, #ff3333);
+
+  --color-info-container: light-dark(#66e5ff, #004857);
+
   --color-neutral-background: light-dark(#fafaf9, #222525);
   --color-neutral-background-alt: light-dark(#f5f5f5, #1d1f20);
   --color-neutral-container: light-dark(#dfe0e2, #292c2e);
@@ -14,7 +17,18 @@
   --color-neutral-foreground: light-dark(#20201d, #eaebec);
   --color-neutral-on-foreground: light-dark(#fafafa, #1d1e20);
   --color-neutral-on-foreground-contrast: #fafafa;
+
   --color-product-foreground: #f6bb18;
   --color-product-on-foreground: #20201d;
+
   --color-success-foreground: light-dark(#158f00, #19a400);
+}
+
+.gradient {
+  opacity: 0.5;
+  background: radial-gradient(
+    50% 55.77% at 50% 50%,
+    var(--product-foreground, #f6bb18) 50%,
+    rgba(246, 187, 24, 0) 100%
+  );
 }
