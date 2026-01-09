@@ -5,8 +5,8 @@
   --font-mono: 'DM Mono', monospace;
   --font-sans: 'DM Sans', sans-serif;
 
-  --color-neutral-background-alt: light-dark(#f5f5f5, #1d1f20);
-  --color-neutral-background: light-dark(#fafaf9, #222525);
+  --color-neutral-background-alt: light-dark(#f2f2f3, #1d1e20);
+  --color-neutral-background: light-dark(#fcfcfd, #222325);
   --color-neutral-container-dim: light-dark(#f2f2f3, #27282a);
   --color-neutral-container: light-dark(#dfe0e2, #292c2e);
   --color-neutral-container-bright: light-dark(#ecedee, #36373a);

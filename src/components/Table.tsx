@@ -9,7 +9,8 @@ export default function Table() {
   const [hoveredGrade, setHoveredGrade] = useState<GradeRangeType | null>(null)
   const [clickedGrade, setClickedGrade] = useState<GradeRangeType | null>(null)
   const gradesBySystem = useMemo(() => getGradesBySystem(grades), [])
-  const ratio = 1.5
+  const RATIO = 1.5
+  const STRONG_OVERLAP_THRESHOLD = 0.5
 
   function overlaps(a: GradeRangeType, b: GradeRangeType) {
     return a.start <= b.end && b.start <= a.end
@@ -25,24 +26,40 @@ export default function Table() {
     return Math.round((overlap / aLength) * 100) / 100
   }
 
+  type OverlapStrength = 'none' | 'weak' | 'strong'
+
+  function getOverlapStrength(isActive: boolean | null, hoverOverlapRatio: number | null): OverlapStrength {
+    if (!isActive) return 'none'
+    if (hoverOverlapRatio != null && hoverOverlapRatio >= STRONG_OVERLAP_THRESHOLD) return 'strong'
+    return 'weak'
+  }
+
+  const overlapStrengthClasses: Record<OverlapStrength, string> = {
+    none: 'bg-neutral-background',
+    weak: 'bg-product-container-dim',
+    strong: 'bg-product-container',
+  }
+
   return (
-    <div className="relative flex w-full justify-center">
+    <div className="relative flex w-full justify-center gap-1">
       {gradeSystemsMeta.map((system) => (
-        <div key={system.system} className="group relative w-50">
-          <div className="bg-neutral-background/70 group-hover:bg-info-container/40 border-neutral-foreground sticky top-24 z-100 border-b px-4 py-2">
+        <div key={system.system} className="group w-50">
+          <div className="bg-neutral-background-alt border-neutral-foreground sticky top-24 z-100 border-b px-4 py-2">
             <h3 className="font-semibold">{system.name}</h3>
             <div className="text-neutral-foreground-dim -mt-0.5 text-xs">{system.type}</div>
           </div>
-          <div className="relative font-mono">
+          <div className="font-mono">
             {(gradesBySystem[system.system] || []).map((grade, index) => {
               const marginTop = index == 0 ? grade.start : 0
               const isHovered = hoveredGrade && overlaps(hoveredGrade, grade)
+              const hoverOverlapRatio = hoveredGrade && getOverlapRatio(hoveredGrade, grade)
               const isClicked = clickedGrade && overlaps(clickedGrade, grade)
+              const clickedOverlapRatio = clickedGrade && getOverlapRatio(clickedGrade, grade)
               return (
                 <div
                   style={{
-                    height: (grade.end - grade.start + 1) * ratio,
-                    marginTop: marginTop * ratio,
+                    height: (grade.end - grade.start + 1) * RATIO,
+                    marginTop: marginTop * RATIO,
                   }}
                 >
                   <div
@@ -51,17 +68,13 @@ export default function Table() {
                     onMouseLeave={() => setHoveredGrade(null)}
                     onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
                     className={clsx(
-                      'hover:bg-info-container group-hover:bg-info-container/20 group-[inner] border-neutral-background flex h-full cursor-pointer items-center overflow-hidden rounded-2xl border-2 px-4 transition-all',
-                      isHovered ? 'bg-info-container/70 pl-8 text-lg' : 'bg-neutral-container/50',
-                      isClicked && 'bg-red-400'
+                      'hover:bg-product-container-bright border-y-neutral-background-alt flex h-full cursor-pointer items-center overflow-hidden border-y-2 px-4 transition-all',
+                      overlapStrengthClasses[getOverlapStrength(isHovered, hoverOverlapRatio)],
+                      overlapStrengthClasses[getOverlapStrength(isClicked, clickedOverlapRatio)]
                     )}
                   >
-                    <div className="z-10">{grade.value}</div>
-                    {/* <div className="bg-info-container group-[inner]:hover: absolute inset-0 z-0"></div> */}
-                    <small className="hidden flex-1 text-right">
-                      {grade.start} - {grade.end}
-                    </small>
-                    <small className="flex-1 text-right">{hoveredGrade && getOverlapRatio(hoveredGrade, grade)}</small>
+                    <div className="flex-1">{grade.value}</div>
+                    {isClicked && <div className="bg-product-container-bright size-2 rounded-full"></div>}
                   </div>
                 </div>
               )
