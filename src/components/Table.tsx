@@ -51,13 +51,13 @@ export default function Table() {
                     onMouseLeave={() => setHoveredGrade(null)}
                     onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
                     className={clsx(
-                      'hover:bg-info-container group-hover:bg-info-container/20 group-[inner] border-neutral-background flex h-full cursor-pointer items-center overflow-hidden rounded-2xl border-2 px-4',
-                      isHovered ? 'bg-info-container/70' : 'bg-neutral-container/50',
+                      'hover:bg-info-container group-hover:bg-info-container/20 group-[inner] border-neutral-background flex h-full cursor-pointer items-center overflow-hidden rounded-2xl border-2 px-4 transition-all',
+                      isHovered ? 'bg-info-container/70 pl-8 text-lg' : 'bg-neutral-container/50',
                       isClicked && 'bg-red-400'
                     )}
                   >
                     <div className="z-10">{grade.value}</div>
-                    <div className="bg-info-container group-[inner]:hover: absolute inset-0 z-0"></div>
+                    {/* <div className="bg-info-container group-[inner]:hover: absolute inset-0 z-0"></div> */}
                     <small className="hidden flex-1 text-right">
                       {grade.start} - {grade.end}
                     </small>
