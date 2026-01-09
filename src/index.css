@@ -20,7 +20,7 @@
   --color-product-foreground-dim: light-dark(#c270a9, #ae5292);
   --color-product-container-dim: light-dark(#eed8e8, #523348);
   --color-product-container: light-dark(#ddb0d0, #774668);
-  --color-product-container-bright: light-dark(#ddb0d0, #9f5689);
+  --color-product-container-bright: light-dark(#dd9bc9, #9f5689);
 
   --color-error-foreground: light-dark(#cc0000, #ff3333);
   --color-info-container: light-dark(#66e5ff, #004857);
