@@ -1,16 +1,23 @@
 import clsx from 'clsx'
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import gradeSystemsMeta from '../data/gradeSystemsMeta.ts'
 import { grades } from '../data/grades/index.ts'
 import { DEFAULT_SYSTEMS, GRADE_UI_RATIO } from '../helpers/constants.ts'
 import { getGradesBySystem } from '../helpers/grades.ts'
 import { getOverlap, getOverlapClass, getOverlapRatio, getOverlapStrength } from '../helpers/overlaps.ts'
-import { GradeRangeType } from '../types/grade.types.ts'
+import { loadSystems, saveSystems } from '../helpers/storage.ts'
+import { GradeRangeType, GradeSystemId } from '../types/grade.types.ts'
 
 export default function Table() {
-  const activeSystems = DEFAULT_SYSTEMS
+  const [activeSystems, setActiveSystems] = useState<GradeSystemId[]>(() => {
+    return loadSystems() ?? DEFAULT_SYSTEMS
+  })
   const [hoveredGrade, setHoveredGrade] = useState<GradeRangeType | null>(null)
   const [clickedGrade, setClickedGrade] = useState<GradeRangeType | null>(null)
+
+  useEffect(() => {
+    saveSystems(activeSystems)
+  }, [activeSystems])
 
   const systemsInOrder = activeSystems
     .map((id) => gradeSystemsMeta.find((system) => system.system === id))
@@ -42,6 +49,7 @@ export default function Table() {
                         height: (grade.end - grade.start + 1) * GRADE_UI_RATIO,
                         marginTop: marginTop * GRADE_UI_RATIO,
                       }}
+                      key={`${grade}-${grade.start}`}
                     >
                       <div
                         key={grade.value}
