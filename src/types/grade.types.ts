@@ -1,4 +1,19 @@
-export type GradeSystemId = 'ew' | 'yds' | 'uiaa' | 'fr' | 'uk'
+export type GradeSystemId =
+  | 'aus'
+  | 'bra'
+  | 'fin'
+  | 'fra'
+  | 'nccs'
+  | 'nor'
+  | 'pol'
+  | 'rus'
+  | 'sa'
+  | 'sao'
+  | 'sax'
+  | 'swe'
+  | 'uiaa'
+  | 'uk'
+  | 'yds'
 
 export type GradeRangeType = {
   system: GradeSystemId
