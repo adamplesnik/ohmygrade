@@ -6,12 +6,11 @@ import { DEFAULT_SYSTEMS, GRADE_UI_RATIO } from '../helpers/constants.ts'
 import { getGradesBySystem } from '../helpers/grades.ts'
 import { getOverlap, getOverlapClass, getOverlapRatio, getOverlapStrength } from '../helpers/overlaps.ts'
 import { loadSystems, saveSystems } from '../helpers/storage.ts'
-import { GradeRangeType, GradeSystemId } from '../types/grade.types.ts'
+import { GradeRangeType } from '../types/grade.types.ts'
 
 export default function Table() {
-  const [activeSystems, setActiveSystems] = useState<GradeSystemId[]>(() => {
-    return loadSystems() ?? DEFAULT_SYSTEMS
-  })
+  const activeSystems = loadSystems() ?? DEFAULT_SYSTEMS
+
   const [hoveredGrade, setHoveredGrade] = useState<GradeRangeType | null>(null)
   const [clickedGrade, setClickedGrade] = useState<GradeRangeType | null>(null)
 
