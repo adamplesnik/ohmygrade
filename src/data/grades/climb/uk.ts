@@ -1,0 +1,130 @@
+import { GradeRangeType } from '../../../types/grade.types'
+
+export const ukGrades: GradeRangeType[] = [
+  {
+    system: 'uk',
+    value: '1a',
+    start: 0,
+    end: 29,
+  },
+  {
+    system: 'uk',
+    value: '1b',
+    start: 30,
+    end: 59,
+  },
+  {
+    system: 'uk',
+    value: '1c',
+    start: 60,
+    end: 89,
+  },
+  {
+    system: 'uk',
+    value: '2a',
+    start: 90,
+    end: 119,
+  },
+  {
+    system: 'uk',
+    value: '2b',
+    start: 120,
+    end: 149,
+  },
+  {
+    system: 'uk',
+    value: '2c',
+    start: 150,
+    end: 179,
+  },
+  {
+    system: 'uk',
+    value: '3a',
+    start: 180,
+    end: 209,
+  },
+  {
+    system: 'uk',
+    value: '3b',
+    start: 210,
+    end: 239,
+  },
+  {
+    system: 'uk',
+    value: '3c',
+    start: 240,
+    end: 269,
+  },
+  {
+    system: 'uk',
+    value: '4a',
+    start: 270,
+    end: 299,
+  },
+  {
+    system: 'uk',
+    value: '4b',
+    start: 300,
+    end: 398,
+  },
+  {
+    system: 'uk',
+    value: '4c',
+    start: 399,
+    end: 500,
+  },
+  {
+    system: 'uk',
+    value: '5a',
+    start: 501,
+    end: 599,
+  },
+  {
+    system: 'uk',
+    value: '5b',
+    start: 600,
+    end: 698,
+  },
+  {
+    system: 'uk',
+    value: '5c',
+    start: 699,
+    end: 800,
+  },
+  {
+    system: 'uk',
+    value: '6a',
+    start: 801,
+    end: 899,
+  },
+  {
+    system: 'uk',
+    value: '6b',
+    start: 900,
+    end: 998,
+  },
+  {
+    system: 'uk',
+    value: '6c',
+    start: 999,
+    end: 1100,
+  },
+  {
+    system: 'uk',
+    value: '7a',
+    start: 1101,
+    end: 1199,
+  },
+  {
+    system: 'uk',
+    value: '7b',
+    start: 1200,
+    end: 1301,
+  },
+  {
+    system: 'uk',
+    value: '7c',
+    start: 1302,
+    end: 1400,
+  },
+]

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useMemo, useState } from 'react'
-import grades from '../data/grades.ts'
 import gradeSystemsMeta from '../data/gradeSystemsMeta.ts'
+import { grades } from '../data/grades/index.ts'
 import { GRADE_UI_RATIO } from '../helpers/constants.ts'
 import { getGradesBySystem } from '../helpers/grades.ts'
 import { getOverlap, getOverlapClass, getOverlapRatio, getOverlapStrength } from '../helpers/overlaps.ts'
@@ -17,7 +17,9 @@ export default function Table() {
       {gradeSystemsMeta.map((system) => (
         <div key={system.system} className="group w-50">
           <div className="bg-neutral-background-alt border-neutral-foreground sticky top-24 z-100 border-b px-4 py-2">
-            <h3 className="group-hover:text-product-foreground font-semibold">{system.name}</h3>
+            <h3 className="group-hover:text-product-foreground font-semibold text-nowrap text-ellipsis">
+              {system.name}
+            </h3>
             <div className="text-neutral-foreground-dim -mt-0.5 text-xs">{system.type}</div>
           </div>
           <div className="font-mono">
