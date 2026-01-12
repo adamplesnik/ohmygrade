@@ -4,15 +4,13 @@ import { HTMLAttributes } from 'react'
 type ButtonProps = {
   value: string
   active?: boolean
-  big?: boolean
 } & HTMLAttributes<HTMLDivElement>
 
-function Button({ value, big, active }: ButtonProps) {
+function Button({ value, active }: ButtonProps) {
   return (
     <div
       className={clsx(
-        'hover:border-neutral-foreground active:border-neutral-foreground flex cursor-pointer items-center border border-transparent font-semibold transition-colors',
-        big ? 'h-12 px-4' : 'h-8 px-2',
+        'active:bg-neutral-container-bright hover:bg-neutral-container flex h-10 cursor-pointer items-center rounded-full border border-transparent px-4 font-semibold transition-colors',
         active ? 'bg-neutral-foreground text-neutral-on-foreground' : ''
       )}
     >
