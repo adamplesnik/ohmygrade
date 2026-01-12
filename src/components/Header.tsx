@@ -1,17 +1,17 @@
+import { useTranslation } from 'react-i18next'
 import Button from './Button'
 import Logo from './Logo'
 
 function Header() {
+  const { t } = useTranslation()
+
   return (
-    <div className="bg-neutral-background-alt sticky top-0 z-10 flex items-center pt-6 pb-4 md:pt-8 lg:pt-10">
+    <div className="bg-neutral-background-alt sticky top-0 z-10 flex items-center gap-8 pt-6 pb-4 md:pt-8 lg:pt-10">
       <Logo />
-      <div className="z-10 flex flex-1 items-center justify-end gap-2 md:justify-center">
-        <Button value="Table" big active />
-        <Button value="Comparator" big />
-      </div>
+      <div className="text-neutral-foreground-dim flex-1">{t('title')}</div>
       <div className="hidden justify-end gap-1 md:flex">
-        <Button value="Config" />
-        <Button value="About" />
+        <Button value={t('config.buttonValue')} />
+        <Button value={t('about.buttonValue')} />
       </div>
     </div>
   )

@@ -1,0 +1,13 @@
+{
+  "title": "Climbing grade comparison tool",
+  "type": {
+    "boulder": "Bouldering",
+    "climb": "Climbing"
+  },
+  "config": {
+    "buttonValue": "Config"
+  },
+  "about": {
+    "buttonValue": "About"
+  }
+}

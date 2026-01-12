@@ -1,5 +1,6 @@
 import clsx from 'clsx'
 import { useMemo, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { useActiveSystems } from '../context/active-systems/useActiveSystems.ts'
 import gradeSystemsMeta from '../data/gradeSystemsMeta.ts'
 import { grades } from '../data/grades/index.ts'
@@ -10,6 +11,7 @@ import { GradeRangeType } from '../types/grade.types.ts'
 
 export default function Table() {
   const { activeSystems } = useActiveSystems()
+  const { t } = useTranslation()
 
   const [hoveredGrade, setHoveredGrade] = useState<GradeRangeType | null>(null)
   const [clickedGrade, setClickedGrade] = useState<GradeRangeType | null>(null)
@@ -29,7 +31,9 @@ export default function Table() {
                 <h3 className="group-hover:text-product-foreground font-semibold text-nowrap text-ellipsis">
                   {system.name}
                 </h3>
-                <div className="text-neutral-foreground-dim -mt-0.5 text-xs">{system.type}</div>
+                <div className="text-neutral-foreground-dim -mt-0.5 text-xs">
+                  {system.type == 'climb' ? t('type.climb') : t('type.boulder')}
+                </div>
               </div>
               <div className="font-mono">
                 {(gradesBySystem[system.system] || []).map((grade, index) => {
@@ -52,7 +56,7 @@ export default function Table() {
                         onMouseLeave={() => setHoveredGrade(null)}
                         onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
                         className={clsx(
-                          'hover:bg-product-container-bright border-y-neutral-background-alt flex h-full cursor-pointer items-center overflow-hidden border-y-2 px-4 transition-all',
+                          'hover:bg-product-container-bright border-y-neutral-background-alt flex h-full cursor-pointer items-center overflow-hidden border-y-2 px-4 transition-colors duration-150',
                           getOverlapClass(getOverlapStrength(isHovered, hoverOverlapRatio), 'background'),
                           getOverlapClass(getOverlapStrength(isClicked, clickedOverlapRatio), 'background')
                         )}
