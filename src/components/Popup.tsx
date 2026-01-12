@@ -12,7 +12,15 @@ const Popup = ({ isOpen = false, title, children, onClick }: PopupProps) => {
     <>
       <div
         className={clsx(
-          'bg-neutral-background fixed top-0 right-0 bottom-0 z-50 w-full max-w-80 p-6 transition-transform',
+          'fixed inset-0 z-40 bg-black transition-opacity',
+          isOpen ? 'opacity-20' : 'pointer-events-none opacity-0'
+        )}
+        onClick={onClick}
+      ></div>
+
+      <div
+        className={clsx(
+          'bg-neutral-background fixed top-0 right-0 bottom-0 z-50 w-full max-w-80 p-6 transition-transform duration-300',
           isOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >

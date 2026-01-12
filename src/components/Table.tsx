@@ -28,7 +28,7 @@ const Table = () => {
         (system) =>
           system && (
             <div key={system.system} className="group w-50">
-              <div className="bg-neutral-background-alt border-neutral-foreground sticky top-24 z-100 border-b px-4 py-2">
+              <div className="bg-neutral-background-alt border-neutral-foreground sticky top-24 z-30 border-b px-4 py-2">
                 <h3 className="group-hover:text-product-foreground font-semibold text-nowrap text-ellipsis">
                   {system.name}
                 </h3>

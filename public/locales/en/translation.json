@@ -6,7 +6,8 @@
   },
   "config": {
     "buttonValue": "Config",
-    "title": "Config"
+    "title": "Config",
+    "desc": "Select grade systems to appear in the table. Drag to reorder. Changes are saved automatically."
   },
   "about": {
     "buttonValue": "About"
