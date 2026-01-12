@@ -1,10 +1,11 @@
 import clsx from 'clsx'
+import { Asterisk } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useActiveSystems } from '../context/active-systems/useActiveSystems.ts'
 import gradeSystemsMeta from '../data/gradeSystemsMeta.ts'
 import { grades } from '../data/grades/index.ts'
-import { GRADE_UI_RATIO } from '../helpers/constants.ts'
+import { GRADE_UI_RATIO, LUCIDE_SIZE, LUCIDE_STROKE } from '../helpers/constants.ts'
 import { getGradesBySystem } from '../helpers/grades.ts'
 import { getOverlap, getOverlapClass, getOverlapRatio, getOverlapStrength } from '../helpers/overlaps.ts'
 import { GradeRangeType } from '../types/grade.types.ts'
@@ -62,7 +63,7 @@ export default function Table() {
                         )}
                       >
                         <div className="flex-1">{grade.value}</div>
-                        {isClicked && <div className={clsx('bg-neutral-foreground flex size-2 rounded-full')}></div>}
+                        {isClicked && <Asterisk size={LUCIDE_SIZE} strokeWidth={LUCIDE_STROKE} />}
                       </div>
                     </div>
                   )

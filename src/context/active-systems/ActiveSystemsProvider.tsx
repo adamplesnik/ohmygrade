@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react'
-import { DEFAULT_SYSTEMS, STORAGE_KEY } from '../../helpers/constants'
+import { SYSTEMS_DEFAULT, SYSTEMS_STORAGE_KEY } from '../../helpers/constants'
 import { GradeSystemId } from '../../types/grade.types'
 import { ActiveSystemsContext } from './ActiveSystemsContext'
 
 export function ActiveSystemsProvider({ children }: { children: React.ReactNode }) {
   const [activeSystems, setActiveSystems] = useState<GradeSystemId[]>(() => {
     try {
-      const raw = localStorage.getItem(STORAGE_KEY)
-      return raw ? JSON.parse(raw) : DEFAULT_SYSTEMS
+      const raw = localStorage.getItem(SYSTEMS_STORAGE_KEY)
+      return raw ? JSON.parse(raw) : SYSTEMS_DEFAULT
     } catch {
-      return DEFAULT_SYSTEMS
+      return SYSTEMS_DEFAULT
     }
   })
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(activeSystems))
+    localStorage.setItem(SYSTEMS_STORAGE_KEY, JSON.stringify(activeSystems))
   }, [activeSystems])
 
   return (
