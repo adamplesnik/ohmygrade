@@ -1,11 +1,18 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import AboutPopup from './AboutPopup'
 import Button from './Button'
+import ConfigPopup from './ConfigPopup'
 import Logo from './Logo'
-import Popup from './Popup'
 
 const Header = () => {
+  const [openAboutModal, setOpenAboutModal] = useState(false)
   const [openConfigModal, setOpenConfigModal] = useState(false)
+
+  const closeModals = () => {
+    setOpenAboutModal(false)
+    setOpenConfigModal(false)
+  }
 
   const { t } = useTranslation()
 
@@ -15,15 +22,26 @@ const Header = () => {
         <Logo />
         <div className="text-neutral-foreground-dim flex-1">{t('title')}</div>
         <div className="hidden justify-end gap-1 md:flex">
-          <Button onClick={() => setOpenConfigModal(true)}>{t('config.buttonValue')}</Button>
-          <Button>{t('about.buttonValue')}</Button>
+          <Button
+            onClick={() => {
+              closeModals()
+              setOpenConfigModal(true)
+            }}
+          >
+            {t('config.buttonValue')}
+          </Button>
+          <Button
+            onClick={() => {
+              closeModals()
+              setOpenAboutModal(true)
+            }}
+          >
+            {t('about.buttonValue')}
+          </Button>
         </div>
       </header>
-      <Popup isOpen={openConfigModal} onClick={() => setOpenConfigModal(false)} title={t('config.title')}>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae magni omnis delectus nemo, maxime molestiae
-        dolorem numquam mollitia, voluptate ea, accusamus excepturi deleniti ratione sapiente! Laudantium, aperiam
-        doloribus. Odit, aut.
-      </Popup>
+      <ConfigPopup isOpen={openConfigModal} onClick={() => setOpenConfigModal(false)}></ConfigPopup>
+      <AboutPopup isOpen={openAboutModal} onClick={() => setOpenAboutModal(false)}></AboutPopup>
     </>
   )
 }
