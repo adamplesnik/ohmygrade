@@ -5,7 +5,8 @@
     "climb": "Climbing"
   },
   "config": {
-    "buttonValue": "Config"
+    "buttonValue": "Config",
+    "title": "Config"
   },
   "about": {
     "buttonValue": "About"
