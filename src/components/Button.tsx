@@ -6,7 +6,7 @@ type ButtonProps = {
   active?: boolean
 } & HTMLAttributes<HTMLDivElement>
 
-function Button({ value, active }: ButtonProps) {
+const Button = ({ value, active, onClick }: ButtonProps) => {
   return (
     <div
       className={clsx(

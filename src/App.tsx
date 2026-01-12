@@ -2,7 +2,7 @@ import '../i18n'
 import Header from './components/Header'
 import Table from './components/Table'
 
-function App() {
+const App = () => {
   return (
     <div className="text-foreground mx-auto px-6 md:px-8 lg:px-10">
       <Header />

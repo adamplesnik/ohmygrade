@@ -10,7 +10,7 @@ import { getGradesBySystem } from '../helpers/grades.ts'
 import { getOverlap, getOverlapClass, getOverlapRatio, getOverlapStrength } from '../helpers/overlaps.ts'
 import { GradeRangeType } from '../types/grade.types.ts'
 
-export default function Table() {
+const Table = () => {
   const { activeSystems } = useActiveSystems()
   const { t } = useTranslation()
 
@@ -75,3 +75,5 @@ export default function Table() {
     </main>
   )
 }
+
+export default Table
