@@ -23,7 +23,7 @@ export default function Table() {
   const gradesBySystem = useMemo(() => getGradesBySystem(grades), [])
 
   return (
-    <div className="relative flex w-full justify-center gap-1">
+    <main className="flex w-full justify-center gap-1" role="main">
       {systemsInOrder.map(
         (system) =>
           system && (
@@ -72,6 +72,6 @@ export default function Table() {
             </div>
           )
       )}
-    </div>
+    </main>
   )
 }
