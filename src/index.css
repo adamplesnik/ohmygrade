@@ -11,7 +11,7 @@
   --color-neutral-container: light-dark(#dfe0e2, #292c2e);
   --color-neutral-container-bright: light-dark(#ecedee, #36373a);
   --color-neutral-outline: light-dark(#c9cccf, #4e5356);
-  --color-neutral-foreground-dim: light-dark(#819098, #949b9e);
+  --color-neutral-foreground-dim: light-dark(#646f75, #949b9e);
   --color-neutral-foreground: light-dark(#20201d, #eaebec);
   --color-neutral-on-foreground: light-dark(#fafafa, #1d1e20);
   --color-neutral-on-foreground-contrast: #fafafa;
