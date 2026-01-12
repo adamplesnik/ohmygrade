@@ -20,8 +20,8 @@ const Popup = ({ isOpen = false, title, children, onClick }: PopupProps) => {
 
       <div
         className={clsx(
-          'bg-neutral-background fixed top-0 right-0 bottom-0 z-50 w-full max-w-80 p-6 transition-transform duration-300',
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+          'bg-neutral-background/80 fixed top-4 right-4 bottom-4 z-50 w-full max-w-80 rounded-2xl p-6 shadow-lg backdrop-blur transition-transform duration-300',
+          isOpen ? 'translate-x-0' : 'translate-x-[120%]'
         )}
       >
         <div className="mb-8 flex w-full items-center">
