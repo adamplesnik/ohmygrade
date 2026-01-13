@@ -1,11 +1,10 @@
 import clsx from 'clsx'
-import { Asterisk } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useActiveSystems } from '../context/active-systems/useActiveSystems.ts'
 import gradeSystemsMeta from '../data/gradeSystemsMeta.ts'
 import { grades } from '../data/grades/index.ts'
-import { GRADE_UI_RATIO, LUCIDE_SIZE, LUCIDE_STROKE } from '../helpers/constants.ts'
+import { GRADE_UI_RATIO } from '../helpers/constants.ts'
 import { getGradesBySystem } from '../helpers/grades.ts'
 import { getOverlap, getOverlapClass, getOverlapRatio, getOverlapStrength } from '../helpers/overlaps.ts'
 import { GradeRangeType } from '../types/grade.types.ts'
@@ -36,39 +35,34 @@ const Table = () => {
                   {system.type == 'climb' ? t('type.climb') : t('type.boulder')}
                 </div>
               </div>
-              <div className="font-mono">
-                {(gradesBySystem[system.system] || []).map((grade, index) => {
-                  const marginTop = index == 0 ? grade.start : 0
-                  const isHovered = hoveredGrade && getOverlap(hoveredGrade, grade) > 0
-                  const hoverOverlapRatio = hoveredGrade && getOverlapRatio(hoveredGrade, grade)
-                  const isClicked = clickedGrade && getOverlap(clickedGrade, grade) > 0
-                  const clickedOverlapRatio = clickedGrade && getOverlapRatio(clickedGrade, grade)
-                  return (
-                    <div
-                      style={{
-                        height: (grade.end - grade.start + 1) * GRADE_UI_RATIO,
-                        marginTop: marginTop * GRADE_UI_RATIO,
-                      }}
-                      key={`${grade}-${grade.start}`}
-                    >
-                      <div
-                        key={grade.value}
-                        onMouseEnter={() => setHoveredGrade(grade)}
-                        onMouseLeave={() => setHoveredGrade(null)}
-                        onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
-                        className={clsx(
-                          'hover:bg-product-container-bright border-y-neutral-background-alt flex h-full cursor-pointer items-center overflow-hidden border-y-2 px-4 transition-colors duration-150',
-                          getOverlapClass(getOverlapStrength(isHovered, hoverOverlapRatio), 'background'),
-                          getOverlapClass(getOverlapStrength(isClicked, clickedOverlapRatio), 'background')
-                        )}
-                      >
-                        <div className="flex-1">{grade.value}</div>
-                        {isClicked && <Asterisk size={LUCIDE_SIZE} strokeWidth={LUCIDE_STROKE} />}
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
+
+              {gradesBySystem[system.system].map((grade, index) => {
+                const marginTop = index == 0 ? grade.start : 0
+                const isHovered = hoveredGrade && getOverlap(hoveredGrade, grade) > 0
+                const hoverOverlapRatio = hoveredGrade && getOverlapRatio(hoveredGrade, grade)
+                const isClicked = clickedGrade && getOverlap(clickedGrade, grade) > 0
+                const clickedOverlapRatio = clickedGrade && getOverlapRatio(clickedGrade, grade)
+                return (
+                  <div
+                    style={{
+                      height: (grade.end - grade.start + 1) * GRADE_UI_RATIO,
+                      marginTop: marginTop * GRADE_UI_RATIO,
+                    }}
+                    key={`${grade}-${grade.start}`}
+                    onMouseEnter={() => setHoveredGrade(grade)}
+                    onMouseLeave={() => setHoveredGrade(null)}
+                    onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
+                    className={clsx(
+                      'hover:bg-product-container-bright border-y-neutral-background-alt relative flex h-full cursor-pointer items-center overflow-hidden border-y-2 px-4 font-mono transition-colors duration-150',
+                      getOverlapClass(getOverlapStrength(isHovered, hoverOverlapRatio), 'background'),
+                      getOverlapClass(getOverlapStrength(isClicked, clickedOverlapRatio), 'background')
+                    )}
+                  >
+                    <div className="flex-1">{grade.value}</div>
+                    {isClicked && <div className="absolute top-1/2 right-4 -translate-1/2">*</div>}
+                  </div>
+                )
+              })}
             </div>
           )
       )}
