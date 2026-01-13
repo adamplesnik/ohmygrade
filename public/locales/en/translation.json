@@ -10,6 +10,9 @@
     "desc": "Select grade systems to appear in the table. Drag to reorder. Changes are saved automatically."
   },
   "about": {
-    "buttonValue": "About"
+    "buttonValue": "About",
+    "desc": "A tool for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.",
+    "developed": "Designed and developed",
+    "by": "by"
   }
 }
