@@ -4,7 +4,7 @@ import Table from './components/Table'
 
 const App = () => {
   return (
-    <div className="text-foreground mx-auto px-6 pb-8 md:px-8 lg:px-10">
+    <div className="mx-auto max-w-7xl px-6 pb-8 md:px-8 lg:px-10">
       <Header />
       <Table />
     </div>

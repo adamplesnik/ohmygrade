@@ -18,26 +18,28 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-neutral-background-alt sticky top-0 z-10 flex items-center gap-8 pt-6 pb-4 md:pt-8 lg:pt-10">
-        <Logo />
-        <div className="text-neutral-foreground-dim flex-1">{t('title')}</div>
-        <div className="flex justify-end gap-1">
-          <Button
-            onClick={() => {
-              closeModals()
-              setOpenConfigModal(true)
-            }}
-          >
-            {t('config.buttonValue')}
-          </Button>
-          <Button
-            onClick={() => {
-              closeModals()
-              setOpenAboutModal(true)
-            }}
-          >
-            {t('about.buttonValue')}
-          </Button>
+      <header className="bg-neutral-background-alt/80 fixed top-0 right-0 left-0 z-10 px-4 py-8 backdrop-blur-xs md:px-8 lg:px-10">
+        <div className="mx-auto flex max-w-7xl items-center gap-8 pl-4">
+          <Logo />
+          <div className="text-neutral-foreground-dim hidden sm:block">{t('title')}</div>
+          <div className="flex flex-1 justify-end gap-1">
+            <Button
+              onClick={() => {
+                closeModals()
+                setOpenConfigModal(true)
+              }}
+            >
+              {t('config.buttonValue')}
+            </Button>
+            <Button
+              onClick={() => {
+                closeModals()
+                setOpenAboutModal(true)
+              }}
+            >
+              {t('about.buttonValue')}
+            </Button>
+          </div>
         </div>
       </header>
       <ConfigPopup isOpen={openConfigModal} onClick={() => setOpenConfigModal(false)}></ConfigPopup>
