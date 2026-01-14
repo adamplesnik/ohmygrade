@@ -22,25 +22,34 @@ const Table = () => {
   const gradesBySystem = useMemo(() => getGradesBySystem(grades), [])
 
   return (
-    <main className="mt-24 min-w-full" role="main">
-      <div className="bg-neutral-background-alt/60 sticky top-24 z-30 -mx-8 flex items-center gap-1 px-8 backdrop-blur-xs">
-        {systemsInOrder.map(
-          (system) =>
+    <main className="mt-22 min-w-full" role="main">
+      <div className="sticky top-22 z-30 -mx-8 flex items-center gap-1 px-8">
+        {systemsInOrder.map((system) => {
+          const isHovered = system?.system === hoveredGrade?.system
+          return (
             system && (
-              <div key={system.system} className="min-w-40 flex-1 shrink-0 overflow-hidden px-4 py-2">
-                <h3 className="font-semibold text-nowrap text-ellipsis">{system.name}</h3>
+              <div key={system.system} className="relative min-w-24 flex-1 shrink-0 overflow-hidden px-4 py-2">
+                <h3
+                  className={clsx(
+                    'font-semibold text-nowrap text-ellipsis transition-colors duration-150',
+                    isHovered && 'text-product-foreground'
+                  )}
+                >
+                  {system.name}
+                </h3>
                 <div className="text-neutral-foreground-dim -mt-0.5 text-xs">
-                  {system.type == 'climb' ? t('type.climb') : t('type.boulder')}
+                  {system.type === 'climb' ? t('type.climb') : t('type.boulder')}
                 </div>
               </div>
             )
-        )}
+          )
+        })}
       </div>
       <div className="flex gap-1">
         {systemsInOrder.map(
           (system) =>
             system && (
-              <div key={`${system.system}_cell`} className="group min-w-40 flex-1">
+              <div key={`${system.system}_cell`} className="min-w-24 flex-1">
                 {gradesBySystem[system.system].map((grade, index) => {
                   const marginTop = index == 0 ? grade.start : 0
                   const isHovered = hoveredGrade && getOverlap(hoveredGrade, grade) > 0
@@ -56,7 +65,7 @@ const Table = () => {
                       key={`${grade}-${grade.start}`}
                       onMouseEnter={() => setHoveredGrade(grade)}
                       onMouseLeave={() => setHoveredGrade(null)}
-                      onClick={() => (isClicked ? setClickedGrade(null) : setClickedGrade(grade))}
+                      onClick={() => setClickedGrade(isClicked ? null : grade)}
                       className={clsx(
                         'hover:bg-product-container-bright border-y-neutral-background-alt relative flex h-full cursor-pointer items-center overflow-hidden rounded-xl border-y-2 px-4 font-mono transition-colors duration-150',
                         getOverlapClass(getOverlapStrength(isHovered, hoverOverlapRatio), 'background'),
