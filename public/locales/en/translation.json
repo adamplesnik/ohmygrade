@@ -1,5 +1,5 @@
 {
-  "title": "Climbing grade comparison tool",
+  "title": "Climbing grade comparison app",
   "type": {
     "boulder": "Bouldering",
     "climb": "Climbing"
@@ -11,7 +11,7 @@
   },
   "about": {
     "buttonValue": "About",
-    "desc": "A tool for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.",
+    "desc": "An app for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.",
     "developed": "Designed and developed",
     "by": "by"
   }
