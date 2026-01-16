@@ -28,7 +28,13 @@ const Table = () => {
           const isHovered = system?.system === hoveredGrade?.system
           return (
             system && (
-              <div key={system.system} className="relative min-w-24 flex-1 shrink-0 overflow-hidden px-4 py-2">
+              <div
+                key={system.system}
+                className={clsx(
+                  'border-b-neutral-foreground relative min-w-24 flex-1 shrink-0 overflow-hidden border-b-2 px-4 py-2',
+                  isHovered && 'bg-product-container-dim'
+                )}
+              >
                 <h3
                   className={clsx(
                     'font-semibold text-nowrap text-ellipsis transition-colors duration-150',
@@ -67,7 +73,7 @@ const Table = () => {
                       onMouseLeave={() => setHoveredGrade(null)}
                       onClick={() => setClickedGrade(isClicked ? null : grade)}
                       className={clsx(
-                        'hover:bg-product-container-bright border-y-neutral-background-alt relative flex h-full cursor-pointer items-center overflow-hidden rounded-xl border-y-2 px-4 font-mono transition-colors duration-150',
+                        'hover:bg-product-container-bright border-y-neutral-background-alt relative flex h-full cursor-pointer items-center overflow-hidden rounded-sm border-y-2 px-4 font-mono transition-colors duration-150',
                         getOverlapClass(getOverlapStrength(isHovered, hoverOverlapRatio), 'background'),
                         getOverlapClass(getOverlapStrength(isClicked, clickedOverlapRatio), 'background')
                       )}
