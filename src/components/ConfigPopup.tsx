@@ -13,6 +13,8 @@ const ConfigPopup = ({ isOpen = false, onClick }: ConfigPopupType) => {
   const { t } = useTranslation()
   const { activeSystems, setActiveSystems } = useActiveSystems()
 
+  const visibleGradeSystems = gradeSystemsMeta.filter((system) => system.visible)
+
   function toggleSystem(checkedSystem: GradeSystemId) {
     setActiveSystems((prev) => {
       if (prev.includes(checkedSystem) && prev.length === 1) {
@@ -27,7 +29,7 @@ const ConfigPopup = ({ isOpen = false, onClick }: ConfigPopupType) => {
     <Popup isOpen={isOpen} onClick={onClick} title={t('config.title')}>
       <p className="text-neutral-main-dim mb-8 text-sm">{t('config.desc')}</p>
       <div>
-        {gradeSystemsMeta.map((system) => {
+        {visibleGradeSystems.map((system) => {
           const checked = activeSystems.includes(system.system)
           const isLastActive = checked && activeSystems.length === 1
 

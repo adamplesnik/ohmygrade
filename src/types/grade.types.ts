@@ -25,5 +25,6 @@ export type GradeSystemMetaType = {
   system: GradeSystemId
   name: string
   type: 'climb' | 'boulder'
+  visible: boolean
   desc?: string
 }
