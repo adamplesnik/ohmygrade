@@ -8,7 +8,7 @@ type CheckboxType = { checked: boolean } & HTMLAttributes<HTMLInputElement>
 const Checkbox = ({ checked = false, onChange }: CheckboxType) => {
   return (
     <>
-      <input type="checkbox" checked={checked} onChange={onChange} className={clsx('peer appearance-none')} />
+      <input type="checkbox" checked={checked} onChange={onChange} className={clsx('peer hidden')} />
       <div
         className={clsx(
           'border-neutral-main-dim peer-checked:bg-neutral-main peer-checked:border-neutral-main flex size-6 items-center justify-center rounded-lg border transition-colors'
