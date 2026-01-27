@@ -20,7 +20,7 @@ const Popup = ({ isOpen = false, title, children, onClick }: PopupProps) => {
 
       <div
         className={clsx(
-          'bg-neutral-background/80 border-neutral-outline fixed top-4 right-4 bottom-4 z-50 w-full max-w-80 rounded-2xl p-6 shadow-lg backdrop-blur-xs transition-transform duration-300',
+          'bg-neutral-background/80 border-neutral-outline fixed top-4 right-4 bottom-4 z-50 flex w-full max-w-80 flex-col rounded-2xl p-6 shadow-lg backdrop-blur-xs transition-transform duration-300',
           isOpen ? 'translate-x-0' : 'translate-x-[120%]'
         )}
       >
@@ -30,7 +30,7 @@ const Popup = ({ isOpen = false, title, children, onClick }: PopupProps) => {
             <X size={LUCIDE_SIZE} strokeWidth={LUCIDE_STROKE} />
           </Button>
         </div>
-        {children}
+        <div className="flex-1 overflow-y-auto">{children}</div>
       </div>
     </>
   )
