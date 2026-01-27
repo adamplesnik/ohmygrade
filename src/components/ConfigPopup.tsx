@@ -34,7 +34,7 @@ const ConfigPopup = ({ isOpen = false, onClick }: ConfigPopupType) => {
           return (
             <label
               className={clsx(
-                'hover:bg-neutral-container flex min-h-12 items-center rounded-lg p-2 transition-colors duration-100',
+                'hover:bg-neutral-container active:bg-neutral-container flex min-h-12 items-center rounded-lg p-2 transition-colors duration-100',
                 isLastActive ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
               )}
               key={system.system}
