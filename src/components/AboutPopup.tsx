@@ -17,7 +17,7 @@ const AboutPopup = ({ isOpen = false, onClick }: AboutPopupType) => {
           {t('about.developed')}
           <br />
           {t('about.by')}{' '}
-          <a href="https://adamplesnik.com" className="text-nowrap underline">
+          <a href="https://adamplesnik.com" className="text-nowrap underline" target="_blank">
             Adam Plesník
           </a>
         </p>
@@ -30,6 +30,26 @@ const AboutPopup = ({ isOpen = false, onClick }: AboutPopupType) => {
             className="text-nowrap underline"
           >
             GitHub
+          </a>
+        </p>
+        <p className="text-center text-sm">
+          {t('about.data')}{' '}
+          <a
+            href="https://en.wikipedia.org/wiki/Grade_(climbing)#Comparison_tables"
+            rel="nofollow"
+            target="_blank"
+            className="text-nowrap underline"
+          >
+            Wikipedia
+          </a>
+          ,{' '}
+          <a
+            href="https://www.thecrag.com/en/article/grades"
+            rel="nofollow"
+            target="_blank"
+            className="text-nowrap underline"
+          >
+            theCrag
           </a>
         </p>
       </div>
