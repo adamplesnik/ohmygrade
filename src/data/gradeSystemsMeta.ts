@@ -2,13 +2,13 @@ import { GradeSystemMetaType } from '../types/grade.types'
 
 const gradeSystemsMeta: GradeSystemMetaType[] = [
   {
-    system: 'aus',
-    name: 'Australia',
+    system: 'bra',
+    name: 'Brazil',
     type: 'climb',
   },
   {
-    system: 'bra',
-    name: 'Brazil',
+    system: 'ew',
+    name: 'Ewbank',
     type: 'climb',
   },
   {
@@ -18,7 +18,7 @@ const gradeSystemsMeta: GradeSystemMetaType[] = [
   },
   {
     system: 'fra',
-    name: 'French',
+    name: 'France',
     type: 'climb',
   },
   {
@@ -44,11 +44,6 @@ const gradeSystemsMeta: GradeSystemMetaType[] = [
   {
     system: 'sa',
     name: 'South Africa',
-    type: 'climb',
-  },
-  {
-    system: 'sao',
-    name: 'South Africa (old)',
     type: 'climb',
   },
   {

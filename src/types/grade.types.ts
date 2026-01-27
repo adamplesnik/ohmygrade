@@ -1,6 +1,6 @@
 export type GradeSystemId =
-  | 'aus'
   | 'bra'
+  | 'ew'
   | 'fin'
   | 'fra'
   | 'nccs'
@@ -8,7 +8,6 @@ export type GradeSystemId =
   | 'pol'
   | 'rus'
   | 'sa'
-  | 'sao'
   | 'sax'
   | 'swe'
   | 'uiaa'
