@@ -1,47 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
+
 @import 'tailwindcss';
-
 @theme {
-  --font-mono: 'DM Mono', serif;
+  --font-mono: 'DM Mono', monospace;
+  --font-sans: 'DM Sans', sans-serif;
 
-  --color-neutral-background: #fafaf9;
-  --color-neutral-background-alt: #f5f5f5;
-  --color-neutral-container: #dfe0e2;
-  --color-neutral-outline: #c9cccf;
-  --color-neutral-foreground-dim: #555b5e;
-  --color-neutral-foreground: #20201d;
-  --color-neutral-on-foreground: #fafafa;
-  --color-neutral-on-foreground-contrast: #fafafa;
+  --color-neutral-background-alt: light-dark(#f2f2f3, #1d1e20);
+  --color-neutral-background: light-dark(#fcfcfd, #222325);
+  --color-neutral-container-dim: light-dark(#f2f2f3, #27282a);
+  --color-neutral-container: light-dark(#dfe0e2, #292c2e);
+  --color-neutral-container-bright: light-dark(#ecedee, #36373a);
+  --color-neutral-outline: light-dark(#c9cccf, #4e5356);
+  --color-neutral-main-dim: light-dark(#646f75, #949b9e);
+  --color-neutral-main: light-dark(#20201d, #eaebec);
+  --color-neutral-on-main: light-dark(#fafafa, #1d1e20);
+  --color-neutral-on-main-contrast: #fafafa;
 
-  --color-product-foreground: #f6bb18;
-  --color-product-on-foreground: #20201d;
-}
+  --color-product-foreground: light-dark(#b34d94, #bf4099);
+  --color-product-main-dim: light-dark(#c270a9, #ae5292);
+  --color-product-container-dim: light-dark(#eed8e8, #523348);
+  --color-product-container: light-dark(#ddb0d0, #774668);
+  --color-product-container-bright: light-dark(#dd9bc9, #9f5689);
 
-@media (prefers-color-scheme: dark) {
-  @theme {
-    --color-neutral-background: #222525;
-    --color-neutral-background-alt: #1d1f20;
-    --color-neutral-container: #292c2e;
-    --color-neutral-outline: #4e5356;
-    --color-neutral-foreground-dim: #949b9e;
-    --color-neutral-foreground: #eaebec;
-    --color-neutral-on-foreground: #1d1e20;
-    --color-neutral-on-foreground-contrast: #fafafa;
-  }
-}
-
-:root {
-  /* COLORS */
-  --error-background-light: #ffd6d6;
-  --error-background-dark: #5c0000;
-  --error-foreground-light: #cc0000;
-  --error-foreground-dark: #ff3333;
-  --info-background-light: #e5fbff;
-  --info-background-dark: #00262e;
-  --info-foreground-light: #007f99;
-  --info-foreground-dark: #0095b3;
-  --success-background-light: #e2fddd;
-  --success-background-dark: #062900;
-  --success-foreground-light: #158f00;
-  --success-foreground-dark: #19a400;
+  --color-error-foreground: light-dark(#cc0000, #ff3333);
+  --color-info-container: light-dark(#66e5ff, #004857);
+  --color-success-foreground: light-dark(#158f00, #19a400);
 }

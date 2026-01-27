@@ -1,0 +1,18 @@
+{
+  "title": "Climbing grade comparison app",
+  "type": {
+    "boulder": "Bouldering",
+    "climb": "Climbing"
+  },
+  "config": {
+    "buttonValue": "Config",
+    "title": "Config",
+    "desc": "Select grade systems to appear in the table. Drag to reorder. Changes are saved automatically."
+  },
+  "about": {
+    "buttonValue": "About",
+    "desc": "An app for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.",
+    "developed": "Designed and developed",
+    "by": "by"
+  }
+}

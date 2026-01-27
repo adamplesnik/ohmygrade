@@ -1,7 +1,10 @@
 {
-  "name": "vite-react",
+  "name": "ohmygrade",
+  "author": "Adam Plesnik",
+  "homepage": "https://ohmygrade.app",
+  "description": "An app for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,8 +16,11 @@
     "@tailwindcss/vite": "^4.1.18",
     "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.1",
+    "i18next": "^25.7.4",
+    "lucide-react": "^0.562.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-i18next": "^16.5.2",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
@@ -26,10 +32,12 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "i18next-http-backend": "^3.0.2",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
-    "vite": "^7.3.0"
+    "vite": "^7.3.0",
+    "vite-plugin-pwa": "^1.2.0"
   }
 }
