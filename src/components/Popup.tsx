@@ -20,17 +20,17 @@ const Popup = ({ isOpen = false, title, children, onClick }: PopupProps) => {
 
       <div
         className={clsx(
-          'bg-neutral-background/80 border-neutral-outline fixed top-4 right-4 bottom-4 z-50 flex w-full max-w-80 flex-col rounded-2xl p-6 shadow-lg backdrop-blur-xs transition-transform duration-300',
+          'bg-neutral-background/80 border-neutral-outline fixed top-4 right-4 bottom-4 z-50 flex w-full max-w-80 flex-col overflow-y-auto rounded-2xl shadow-lg backdrop-blur-xs transition-transform duration-300',
           isOpen ? 'translate-x-0' : 'translate-x-[120%]'
         )}
       >
-        <div className="mb-8 flex w-full items-center">
+        <div className="from-neutral-background to-neutral-background/0 sticky top-0 flex w-full items-center bg-linear-to-b from-20% p-6">
           <H className="flex-1">{title}</H>
           <Button onClick={onClick}>
             <X size={LUCIDE_SIZE} strokeWidth={LUCIDE_STROKE} />
           </Button>
         </div>
-        <div className="flex-1 overflow-y-auto">{children}</div>
+        <div className="p-6 pt-2">{children}</div>
       </div>
     </>
   )
