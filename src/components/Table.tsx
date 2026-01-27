@@ -31,7 +31,7 @@ const Table = () => {
               <div
                 key={system.system}
                 className={clsx(
-                  'border-b-neutral-foreground relative min-w-24 flex-1 shrink-0 overflow-hidden border-b-2 px-4 py-2',
+                  'border-b-neutral-main relative min-w-24 flex-1 shrink-0 overflow-hidden border-b-2 px-4 py-2',
                   isHovered && 'bg-product-container-dim'
                 )}
               >
@@ -43,7 +43,7 @@ const Table = () => {
                 >
                   {system.name}
                 </h3>
-                <div className="text-neutral-foreground-dim -mt-0.5 text-xs">
+                <div className="text-neutral-main-dim -mt-0.5 text-xs">
                   {system.type === 'climb' ? t('type.climb') : t('type.boulder')}
                 </div>
               </div>

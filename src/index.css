@@ -11,13 +11,13 @@
   --color-neutral-container: light-dark(#dfe0e2, #292c2e);
   --color-neutral-container-bright: light-dark(#ecedee, #36373a);
   --color-neutral-outline: light-dark(#c9cccf, #4e5356);
-  --color-neutral-foreground-dim: light-dark(#646f75, #949b9e);
-  --color-neutral-foreground: light-dark(#20201d, #eaebec);
-  --color-neutral-on-foreground: light-dark(#fafafa, #1d1e20);
-  --color-neutral-on-foreground-contrast: #fafafa;
+  --color-neutral-main-dim: light-dark(#646f75, #949b9e);
+  --color-neutral-main: light-dark(#20201d, #eaebec);
+  --color-neutral-on-main: light-dark(#fafafa, #1d1e20);
+  --color-neutral-on-main-contrast: #fafafa;
 
   --color-product-foreground: light-dark(#b34d94, #bf4099);
-  --color-product-foreground-dim: light-dark(#c270a9, #ae5292);
+  --color-product-main-dim: light-dark(#c270a9, #ae5292);
   --color-product-container-dim: light-dark(#eed8e8, #523348);
   --color-product-container: light-dark(#ddb0d0, #774668);
   --color-product-container-bright: light-dark(#dd9bc9, #9f5689);
