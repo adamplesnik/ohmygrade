@@ -13,13 +13,13 @@ const ConfigPopup = ({ isOpen = false, onClick }: ConfigPopupType) => {
   const { t } = useTranslation()
   const { activeSystems, setActiveSystems } = useActiveSystems()
 
-  function toggleSystem(systemId: GradeSystemId) {
+  function toggleSystem(checkedSystem: GradeSystemId) {
     setActiveSystems((prev) => {
-      if (prev.includes(systemId) && prev.length === 1) {
+      if (prev.includes(checkedSystem) && prev.length === 1) {
         return prev
       }
 
-      return prev.includes(systemId) ? prev.filter((id) => id !== systemId) : [...prev, systemId]
+      return prev.includes(checkedSystem) ? prev.filter((id) => id !== checkedSystem) : [checkedSystem, ...prev]
     })
   }
 
@@ -29,10 +29,14 @@ const ConfigPopup = ({ isOpen = false, onClick }: ConfigPopupType) => {
       <div>
         {gradeSystemsMeta.map((system) => {
           const checked = activeSystems.includes(system.system)
+          const isLastActive = checked && activeSystems.length === 1
 
           return (
             <label
-              className="hover:bg-neutral-container flex min-h-12 cursor-pointer items-center rounded-lg p-2 transition-colors duration-100"
+              className={clsx(
+                'hover:bg-neutral-container flex min-h-12 items-center rounded-lg p-2 transition-colors duration-100',
+                isLastActive ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'
+              )}
               key={system.system}
             >
               <Checkbox checked={checked} onChange={() => toggleSystem(system.system)} />
