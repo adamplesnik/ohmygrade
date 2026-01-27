@@ -9,7 +9,7 @@ const AboutPopup = ({ isOpen = false, onClick }: AboutPopupType) => {
   const { t } = useTranslation()
   return (
     <Popup isOpen={isOpen} onClick={onClick}>
-      <div className="mt-8 flex flex-col items-center gap-12">
+      <div className="mt-2 flex flex-col items-center gap-12">
         <Logo large />
         <p className="text-center font-semibold">{t('title')}</p>
         <p className="text-center">{t('about.desc')}</p>
