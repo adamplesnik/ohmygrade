@@ -28,6 +28,9 @@ const ConfigPopup = ({ isOpen = false, onClick }: ConfigPopupType) => {
   return (
     <Popup isOpen={isOpen} onClick={onClick} title={t('config.title')}>
       <p className="text-neutral-main-dim mb-8 text-sm">{t('config.desc')}</p>
+      <div className="bg-neutral-main text-neutral-on-main ml-auto w-fit -translate-y-5 -rotate-4 rounded-md p-2 font-mono text-xs font-medium">
+        {t('config.soon')}
+      </div>
       <div>
         {visibleGradeSystems.map((system) => {
           const checked = activeSystems.includes(system.system)

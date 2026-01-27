@@ -7,7 +7,8 @@
   "config": {
     "buttonValue": "Config",
     "title": "Config",
-    "desc": "Select grade systems to appear in the table. Changes are saved automatically."
+    "desc": "Select grade systems to appear in the table. Changes are saved automatically.",
+    "soon": "Boulders grades coming soon!"
   },
   "about": {
     "buttonValue": "About",
