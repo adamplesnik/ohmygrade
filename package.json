@@ -2,7 +2,7 @@
   "name": "ohmygrade",
   "author": "Adam Plesnik",
   "homepage": "https://ohmygrade.app",
-  "description": "An app for comparing climbing grades across systems. Meant to be fast and actually useful for climbers.",
+  "description": "Climbing grade comparison",
   "private": true,
   "version": "0.0.1",
   "type": "module",

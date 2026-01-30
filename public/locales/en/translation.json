@@ -1,5 +1,5 @@
 {
-  "title": "Climbing grade comparison app",
+  "title": "Climbing grade comparison",
   "type": {
     "boulder": "Bouldering",
     "climb": "Climbing"
@@ -8,11 +8,11 @@
     "buttonValue": "Config",
     "title": "Config",
     "desc": "Select grade systems to appear in the table. Changes are saved automatically.",
-    "soon": "Boulders grades coming soon!"
+    "soon": "Boulder grades coming soon!"
   },
   "about": {
     "buttonValue": "About",
-    "desc": "A simple tool for comparing climbing grades across systems.",
+    "desc": "A simple tool to compare climbing and bouldering grades across systems.",
     "developed": "Designed and developed",
     "by": "by",
     "data": "Data sources"
