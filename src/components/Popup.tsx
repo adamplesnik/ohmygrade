@@ -17,14 +17,13 @@ const Popup = ({ isOpen = false, title, children, onClick }: PopupProps) => {
         )}
         onClick={onClick}
       ></div>
-
       <div
         className={clsx(
           'bg-neutral-background/80 border-neutral-outline fixed top-4 right-4 bottom-4 z-50 flex w-full max-w-80 flex-col overflow-y-auto rounded-2xl shadow-lg backdrop-blur-xs transition-transform duration-300',
           isOpen ? 'translate-x-0' : 'translate-x-[120%]'
         )}
       >
-        <div className="from-neutral-background to-neutral-background/0 sticky top-0 flex w-full items-center bg-linear-to-b from-20% p-6">
+        <div className="from-neutral-background/90 to-neutral-background/0 sticky top-0 z-50 flex w-full items-center bg-linear-to-b from-20% p-6">
           <H className="flex-1">{title}</H>
           <Button onClick={onClick}>
             <X size={LUCIDE_SIZE} strokeWidth={LUCIDE_STROKE} />
