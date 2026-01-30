@@ -10,7 +10,9 @@ const AboutPopup = ({ isOpen = false, onClick }: AboutPopupType) => {
   return (
     <Popup isOpen={isOpen} onClick={onClick}>
       <div className="mt-2 flex flex-col items-center gap-12">
-        <Logo large />
+        <div className="w-52">
+          <Logo />
+        </div>
         <p className="text-center font-semibold">{t('title')}</p>
         <p className="text-center">{t('about.desc')}</p>
         <p className="text-center">

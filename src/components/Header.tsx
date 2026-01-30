@@ -20,7 +20,9 @@ const Header = () => {
     <>
       <header className="bg-neutral-background-alt/80 fixed top-0 left-0 z-10 h-36 w-screen px-4 pt-8 backdrop-blur-xs md:px-8 lg:px-10">
         <div className="flex items-center gap-8 pl-4">
-          <Logo />
+          <div className="w-30">
+            <Logo />
+          </div>
           <div className="text-neutral-main-dim hidden sm:block">{t('title')}</div>
           <div className="flex flex-1 justify-end gap-1">
             <Button
