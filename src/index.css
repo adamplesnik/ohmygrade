@@ -1,10 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,100..1000&display=swap');
-
 @import 'tailwindcss';
-@theme {
-  --font-mono: 'DM Mono', monospace;
-  --font-sans: 'DM Sans', sans-serif;
 
+@theme {
   --color-neutral-background-alt: light-dark(#f2f2f3, #1d1e20);
   --color-neutral-background: light-dark(#fcfcfd, #222325);
   --color-neutral-container-dim: light-dark(#f2f2f3, #27282a);
